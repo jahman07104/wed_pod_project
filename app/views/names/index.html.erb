@@ -1,0 +1,13 @@
+<%=link_to 'Add Name', new_name_path %>
+
+<% @names.each do |name|%>
+ <p>
+    Name:<%=link_to name.name, name_path(name)%><br />
+    Age :<%=name.age%>  <br />
+    Phone:<%=name.phone_number%> <br />
+    Address:<%=name.address%> |<%= link_to "Edit",edit_name_path(name)%>  |
+    <%= link_to "Delete", name, method: :delete %>
+    
+
+  </p>
+<% end %>
